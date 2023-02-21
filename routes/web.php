@@ -28,3 +28,8 @@ Route::get('/EditKategori', 'KategoriController@edit')->name('kategori.edit');
 Route::get('/Index', 'BarangController@index')->name('barang.index');
 Route::get('/TampilkanStock', 'StockController@tampilkan')->name('stock.tampilkan');
 Route::get('/BarangKeluar', 'TransaksiController@barangout')->name('transaksi.barangout');
+
+
+
+
+
