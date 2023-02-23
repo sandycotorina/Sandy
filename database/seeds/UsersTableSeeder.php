@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,31 +12,50 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $ketua = factory(User::class)->create([
-            'name'     => 'KETUA',
-            'email'    => 'ketua@inventory.com',
+        // gudang
+        $gudang = factory(User::class)->create([
+            'name'     => 'John',
+            'email'    => 'john@persediaan.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('inventory'),
+            'password' => bcrypt('persediaan'),
+            'phone'    => '89672650972',
         ]);
 
-        $ketua->assignRole('ketua');
+        $gudang->assignRole('gudang');
 
-        $this->command->info('>_ Here is your ketua details to login:');
-        $this->command->warn($ketua->email);
-        $this->command->warn('Password is "inventory"');
+        $this->command->info('>_ Here is your admin gudang details to login:');
+        $this->command->warn($gudang->email);
+        $this->command->warn('Password is "persediaan"');
 
-        $anggota = factory(User::class)->create([
-            'name'     => 'ANGGOTA',
-            'email'    => 'anggota@inventory.com',
+        // pimpinan
+        $pimpinan = factory(User::class)->create([
+            'name'     => 'Doe',
+            'email'    => 'doe@persediaan.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('inventory'),
+            'password' => bcrypt('persediaan'),
+            'phone'    => '89672650972',
         ]);
 
-        $anggota->assignRole('anggota');
+        $pimpinan->assignRole('pimpinan');
 
-        $this->command->info('>_ Here is your anggota details to login:');
-        $this->command->warn($anggota->email);
-        $this->command->warn('Password is "inventory"');
+        $this->command->info('>_ Here is your pimpinan details to login:');
+        $this->command->warn($pimpinan->email);
+        $this->command->warn('Password is "persediaan"');
+
+        // customer
+        $customer = factory(User::class)->create([
+            'name'     => 'Taylor',
+            'email'    => 'taylor@persediaan.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('persediaan'),
+            'phone'    => '89672650972',
+        ]);
+
+        $customer->assignRole('customer');
+
+        $this->command->info('>_ Here is your customer details to login:');
+        $this->command->warn($customer->email);
+        $this->command->warn('Password is "persediaan"');
 
         // bersihkan cache
         $this->command->call('cache:clear');

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Kategori;
+use App\Permission;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('kategori.index');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(Permission $permission)
     {
         //
     }
@@ -52,22 +52,22 @@ class KategoriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(Permission $permission)
     {
-        return view('kategori.edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kategori  $kategori
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, Permission $permission)
     {
         //
     }
@@ -75,10 +75,10 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Kategori  $kategori
+     * @param  \App\Permission  $permission
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(Permission $permission)
     {
         //
     }

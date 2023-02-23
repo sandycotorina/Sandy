@@ -30,37 +30,56 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Master Data
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Aajsjd</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Master Barang</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Transaksi
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{{route('transaksi.barangin')}}">Barang Masuk</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                        </li>
+                        @role('gudang|pimpinan')
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" v-pre>
+                                Master Data <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('kategori')}}" >
+                                        {{ __('Kategori') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('brand')}}">
+                                        {{ __('Brand') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('satuan')}}">
+                                        {{ __('UOM') }}
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('master-barang') }}">{{ __('Master Barang') }}</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Transaksi <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('transaksi.in')}}">
+                                        {{ __('Barang Masuk') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('transaksi.out')}}">
+                                        {{ __('Barang Keluar') }}
+                                    </a>
+                                </div>
+                            </li>
+                        @endrole
+                        @role('customer')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('master-barang') }}">{{ __('Master Barang') }}</a>
+                            </li>
+                        @endrole
                     </ul>
-                  </div>
-                </div>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -102,5 +121,12 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        function showForm(id,text,btn){
+            document.getElementById(id).style.display = 'block';
+            document.getElementById(text).style.display = 'none';
+            btn.style.display = 'none';
+        }
+    </script>
 </body>
 </html>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Transaksi;
+use App\Role;
 use Illuminate\Http\Request;
 
-class TransaksiController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('transaksi.index');
+        //
     }
 
     /**
@@ -24,20 +24,8 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.create');
+        //
     }
-
-    public function barangout()
-    {
-        return view('transaksi.barangout');
-    }
-
-    public function barangin()
-    {
-        return view('transaksi.barangin');
-    }
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -53,10 +41,10 @@ class TransaksiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaksi $transaksi)
+    public function show(Role $role)
     {
         //
     }
@@ -64,10 +52,10 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit(Role $role)
     {
         //
     }
@@ -76,10 +64,10 @@ class TransaksiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaksi $transaksi)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -87,10 +75,10 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Transaksi  $transaksi
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy(Role $role)
     {
         //
     }

@@ -5,23 +5,27 @@ namespace App;
 use Alfa6661\AutoNumber\AutoNumberTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Satuan extends Model
+class Permintaan extends Model
 {
     use AutoNumberTrait;
 
-    protected $table = 'satuans';
+    protected $table = 'permintaans';
     protected $guarded = [
     ];
 
     public function getAutoNumberOptions()
     {
         return [
-            'no_reg' => [
+            'koe_permintaan' => [
                 'format' => function () {
-                    return 'UOM/' . date('Ymd') . '/?';
+                    return 'REQ/' . date('Ymd') . '/?';
                 },
                 'length' => 3
             ]
         ];
+    }
+    public function barang()
+    {
+        return $this->belongsTo(Barang::class);
     }
 }
