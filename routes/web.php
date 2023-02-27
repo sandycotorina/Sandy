@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'kategori'], function(){
     route::get('/','Kategori\CategoryController@index')->name('kategori');
-    route::get('/edit','Kategori\CategoryController@edit')->name('kategori.edit');
+    route::get('/edit/{category}' ,'Kategori\CategoryController@edit')->name('kategori.edit');
     // route::put('/update/{category}','Kategori\CategoryController@update')->name('kategori.update');
     route::post('/store','Kategori\CategoryController@store')->name('kategori.store');
 });

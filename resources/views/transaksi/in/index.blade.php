@@ -46,7 +46,6 @@
                                         </form>
                                     </td>
                                     @else
-                                    <td> - </td>
                                 @endif
                             @endrole
                         </tr>

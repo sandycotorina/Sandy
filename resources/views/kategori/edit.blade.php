@@ -44,7 +44,8 @@
                                 <td>
                                     <form action="" method="post">
                                         @csrf
-                                        <a href="" class="btn btn-outline-warning btn-sm">Edit
+                                        <a href="{{route('kategori')}}"  class="btn btn-outline-warning btn-sm">Kateogry</a>
+                                        <button type="submit" class="btn btn-outline-dan)}}" class="btn btn-outline-warning btn-sm">Edit
                                             Kategori</a>
                                         <button type="submit" class="btn btn-outline-danger btn-sm">Hapus
                                             Kategori</button>

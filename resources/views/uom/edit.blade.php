@@ -3,12 +3,10 @@
 
 @section('content')
 <div class="container">
-    <nav aria-label="breadcrumb ">
-        <ol class="breadcrumb bg-transparent d-flex align-items-center">
-            <li class="breadcrumb-item" aria-current="page">Master Data</li>
-            <li class="breadcrumb-item active" aria-current="page">Edit Satuan</li>
-        </ol>
-    </nav>
+    <div class="d-flex">
+        <p style="matgin-left: 2px; font-weight: bold;">Master Data</p>
+        <p style="margin-left: 5px;">/ Satuan</p>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <form action="" method="post">

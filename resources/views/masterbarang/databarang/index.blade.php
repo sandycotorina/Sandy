@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex">
-        <p style="matgin-left: 2px; font-weight: bold;">Rak Barang</p>
-        <p style="margin-left: 5px;">/ Index</p>
-    </div>
+    <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb bg-transparent d-flex align-items-center">
+            <li class="breadcrumb-item" aria-current="page">Rak Barang</li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
     <div class="card border-0">
         <div class="card-body">
             <table class="table table-striped">
@@ -25,7 +27,6 @@
                 <tbody>
                     @forelse ($barangs as $barang)
                         <tr>
-
                             <td>{{$barang->category->no_reg}}</td>
                             <td>{{$barang->brand->no_reg}}</td>
                             <td>{{$barang->satuan->no_reg}}</td>

@@ -3,10 +3,12 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex">
-        <p style="matgin-left: 2px; font-weight: bold;">Master Data</p>
-        <p style="margin-left: 5px;">/ Katagori</p>
-    </div>
+    <nav aria-label="breadcrumb ">
+        <ol class="breadcrumb bg-transparent d-flex align-items-center">
+            <li class="breadcrumb-item" aria-current="page">Master Data</li>
+            <li class="breadcrumb-item active" aria-current="page">Brand</li>
+        </ol>
+    </nav>
     @role('gudang')
     <div class="row">
         <div class="col-md-5">
@@ -42,22 +44,13 @@
                                     <td>
                                         <form action="" method="post">
                                             @csrf
-                                            <a href="#" onclick="showForm('answer1', 'text1', this); return false;" class="btn btn-outline-warning btn-sm">Edit Kategori</a>
+                                            <a href="{{route('kategori.edit', $category->id)}}"  class="btn btn-outline-warning btn-sm">Edit Kategori</a>
                                             <button type="submit" class="btn btn-outline-danger btn-sm">Hapus Kategori</button>
                                         </form>
                                     </td>
-                                    <td>
-                                        <span id="answer1" style="display: none;">
-                                            <textarea rows="10" cols="115"></textarea>
-                                        </span>
-
-
-                                    </td>
                                 </tr>
                             @empty
-
                             @endforelse
-
                         </tbody>
                     </table>
                 </div>
