@@ -38,4 +38,12 @@ class CategoryController extends Controller
 
         return redirect()->route('kategori');
     }
+    public function destroy(Request $request, $id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete($request->all());
+
+        return redirect()->route('kategori');
+    }
+
 }

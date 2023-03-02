@@ -25,6 +25,7 @@ Route::group(['prefix'=>'kategori'], function(){
     route::get('/edit/{category}' ,'Kategori\CategoryController@edit')->name('kategori.edit');
     route::patch('/update/{category}','Kategori\CategoryController@update')->name('kategori.update');
     route::post('/store','Kategori\CategoryController@store')->name('kategori.store');
+    route::get('{category}','Kategori\CategoryController@destroy')->name('kategori.destroy');
 });
 
 Route::group(['prefix' => 'brand'], function () {
