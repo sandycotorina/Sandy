@@ -36,8 +36,10 @@ Route::group(['prefix' => 'brand'], function () {
 
 Route::group(['prefix' => 'Satuan'], function () {
     route::get('/', 'Uom\UomController@index')->name('satuan');
-    route::get('/edit', 'Uom\UomController@edit')->name('satuan.edit');
+    route::get('/edit/{satuan}', 'Uom\UomController@edit')->name('uom.edit');
     route::post('/store','Uom\UomController@store')->name('uom.store');
+    route::patch('/update/{satuan}','Uom\UomController@update')->name('satuan.update');
+
 });
 
 Route::group(['prefix' => 'master-barang'], function () {

@@ -13,9 +13,11 @@ class UomController extends Controller
         $satuans = Satuan::paginate(5);
         return view('uom.index', compact('satuans'));
     }
-    public function edit()
+    public function edit(Request $request, $id)
     {
-        return view('uom.edit');
+        $satuan = Satuan::findOrFail($id);
+
+        return view('uom.edit', compact('satuan'));
     }
     public function store(Request $request)
     {
@@ -25,5 +27,13 @@ class UomController extends Controller
         );
 
         return redirect()->back();
+    }
+    public function update(Request $request, Satuan $satuan)
+    {
+        // $category = Category::findOrFail($id);
+        $satuan->update($request->all());
+        // $category->update(['nama' => $request->nama]);
+
+        return redirect()->route('satuan');
     }
 }
