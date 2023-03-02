@@ -42,7 +42,7 @@
                                     <td>
                                         <form action="" method="post">
                                             @csrf
-                                            <a href="{{route('brand.edit')}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
+                                            <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
                                             <button class="submit btn btn-outline-danger btn-sm">Hapus</button>
                                         </form>
                                     </td>

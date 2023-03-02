@@ -22,8 +22,21 @@ class BrandController extends Controller
 
         return redirect()->back();
     }
-    public function edit()
+    public function edit(Request $request, $id)
     {
-        return view('brand.edit');
+        $brand = Brand::findOrFail($id);
+
+        return view('brand.edit', compact('brand'));
+
     }
+    public function update(Request $request, Brand $brand)
+    {
+        // $category = Category::findOrFail($id);
+        $brand->update($request->all());
+        // $category->update(['nama' => $request->nama]);
+
+        return redirect()->route('brand');
+    }
+
+
 }
