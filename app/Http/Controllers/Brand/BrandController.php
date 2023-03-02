@@ -37,6 +37,13 @@ class BrandController extends Controller
 
         return redirect()->route('brand');
     }
+    public function destroy(Request $request, $id)
+    {
+        $brand = Brand::findOrFail($id);
+        $brand->delete($request->all());
+
+        return redirect()->route('brand');
+    }
 
 
 }

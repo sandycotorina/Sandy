@@ -36,4 +36,11 @@ class UomController extends Controller
 
         return redirect()->route('satuan');
     }
+    public function destroy(Request $request, $id)
+    {
+        $satuan = Satuan::findOrFail($id);
+        $satuan->delete($request->all());
+
+        return redirect()->route('satuan');
+    }
 }

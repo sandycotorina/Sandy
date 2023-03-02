@@ -42,8 +42,9 @@
                                     <td>
                                         <form action="" method="post">
                                             @csrf
+                                            @method('GET')
                                             <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
-                                            <button class="submit btn btn-outline-danger btn-sm">Hapus</button>
+                                            <a href="{{route('brand.destroy', $brand->id)}}" class="submit btn btn-outline-danger btn-sm">Hapus</a>
                                         </form>
                                     </td>
                                 </tr>
@@ -69,8 +70,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>BRND/20220403/001</td>
-                                    <td>Kawasaki</td>
+                                    <td>{{$brand->no_reg}}</td>
+                                    <td>{{$brand->nama}}</td>
                                 </tr>
                             </tbody>
                         </table>
