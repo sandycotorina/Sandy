@@ -28,10 +28,6 @@ class InController extends Controller
 
         return redirect()->route('transaksi.in');
     }
-    public function store(Request $request, $id)
-    {
-        $permintaans = Permintaan::findOrFail($id);
+ }
 
-        return redirect()->route('transaksi.out');
-}
-}
+
