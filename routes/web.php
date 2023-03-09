@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\TransaksiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -22,7 +22,6 @@
                         <th>Supplier</th>
                         <th>Jumlah permintaan</th>
                         <th>Tanggal</th>
-                        <th>Quantity</th>
                         @role('gudang')
                             <th>Options</th>
                         @endrole
@@ -35,14 +34,13 @@
                             <td>{{$permintaan->barang->brand->nama}}</td>
                             <td>{{$permintaan->jumlah}}</td>
                             <td>{{$permintaan->created_at}}</td>
-                            <td>{{$permintaan->total}}</td>
                             @role('gudang')
                                 @if ($permintaan->status == 'in')
                                     <td class="d-flex">
                                         <form action="" method="">
                                             @csrf
                                             @method('POST')
-                                            <a href="{{route('transaksi.update', $permintaan->id)}}" class="btn btn-outline-info btn-sm">Setujui</a>
+                                            <a href="{{route('transaksi.store', $permintaan->id)}}" class="btn btn-outline-info btn-sm">Setujui</a>
                                         </form>
                                         <form action="" method="post">
                                             @csrf

@@ -79,7 +79,7 @@
                                     <td>{{$category->nama}}</td>
                                 </tr>
                                 @empty
-                            @endforelse
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
