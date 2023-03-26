@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePermintaansTable extends Migration
+class CreateRequestBarangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreatePermintaansTable extends Migration
      */
     public function up()
     {
-        Schema::create('permintaans', function (Blueprint $table) {
+        Schema::create('request_barangs', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('barang_id');
-            $table->string('kode_permintaan');
-            $table->string('jumlah');
-           
-            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreatePermintaansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permintaans');
+        Schema::dropIfExists('request_barangs');
     }
 }

@@ -26,6 +26,8 @@ class RequestbarangController extends Controller
         'status'    => 'in'
        ]);
 
+       
+
        return redirect()->route('master-barang');
     }
 }

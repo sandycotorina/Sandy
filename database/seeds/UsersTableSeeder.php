@@ -1,7 +1,7 @@
 <?php
 
-use App\User;
 use Illuminate\Database\Seeder;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,50 +12,31 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // gudang
-        $gudang = factory(User::class)->create([
-            'name'     => 'Sandy',
-            'email'    => 'Sandyco@persediaan.com',
+        $ketua = factory(User::class)->create([
+            'name'     => 'admin',
+            'email'    => 'admin@sandy.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('persediaan'),
-            'phone'    => '89672650972',
+            'password' => bcrypt('admin'),
         ]);
 
-        $gudang->assignRole('gudang');
+        $ketua->assignRole('ketua');
 
-        $this->command->info('>_ Here is your admin gudang details to login:');
-        $this->command->warn($gudang->email);
-        $this->command->warn('Password is "persediaan"');
+        $this->command->info('>_ Here is your ketua details to login:');
+        $this->command->warn($ketua->email);
+        $this->command->warn('Password is "inventory"');
 
-        // pimpinan
-        $pimpinan = factory(User::class)->create([
-            'name'     => 'Arza',
-            'email'    => 'Arza@persediaan.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('persediaan'),
-            'phone'    => '89672650972',
-        ]);
-
-        $pimpinan->assignRole('pimpinan');
-
-        $this->command->info('>_ Here is your pimpinan details to login:');
-        $this->command->warn($pimpinan->email);
-        $this->command->warn('Password is "persediaan"');
-
-        // customer
         $customer = factory(User::class)->create([
-            'name'     => 'Revan',
-            'email'    => 'Revan@persediaan.com',
+            'name'     => 'customer',
+            'email'    => 'customer@sandy.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('persediaan'),
-            'phone'    => '89672650972',
+            'password' => bcrypt('customer'),
         ]);
 
         $customer->assignRole('customer');
 
         $this->command->info('>_ Here is your customer details to login:');
         $this->command->warn($customer->email);
-        $this->command->warn('Password is "persediaan"');
+        $this->command->warn('Password is "inventory"');
 
         // bersihkan cache
         $this->command->call('cache:clear');
